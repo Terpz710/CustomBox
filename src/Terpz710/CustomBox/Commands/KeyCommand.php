@@ -21,7 +21,7 @@ class KeyCommand extends Command
 
     public function execute(CommandSender $sender, string $commandLabel, array $args)
     {
-        if ($sender->hasPermission($this->getPermission())) {
+        if ($sender->hasPermission($this->hasPermission())) {
             if (isset($args[0])) {
                 $player = $sender->getServer()->getPlayerByPrefix($args[0]);
                 if ($player instanceof Player) {
