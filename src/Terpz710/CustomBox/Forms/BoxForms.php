@@ -67,7 +67,7 @@ class BoxForms implements Form
 
     public function initText(): void
     {
-        $this->data["title"] = Utils::getConfigReplace("title", "{name}", $this->name) ?? "";
+        $this->data["title"] = Utils::getConfigReplace("title", "{name}", $this->name);
         $this->data["content"] = $this->content;
         $this->data["buttons"][] = ["text" => Utils::getConfigReplace("button")];
         $this->labelMap[] = "open";
