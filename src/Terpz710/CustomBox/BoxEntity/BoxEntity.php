@@ -19,7 +19,7 @@ use Terpz710\CustomBox\Utils\Utils;
 
 class BoxEntity extends Human
 {
-    protected $alwaysShowNameTag = true;
+    protected bool $alwaysShowNameTag = true;
     private CompoundTag $tag;
 
     public function __construct(Location $location, Skin $skin, CompoundTag $nbt)
