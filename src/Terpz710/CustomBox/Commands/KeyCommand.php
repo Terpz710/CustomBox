@@ -21,14 +21,14 @@ class KeyCommand extends Command
 
     public function execute(CommandSender $sender, string $commandLabel, array $args)
     {
-        if ($sender->hasPermission($this->hasPermission())) {
+        if ($sender->hasPermission("box.use")) {
             if (isset($args[0])) {
                 $player = $sender->getServer()->getPlayerByPrefix($args[0]);
                 if ($player instanceof Player) {
                     if (isset($args[1])) {
                         $count = $args[2] ?? 1;
                         $count = is_numeric($count) ? $count : 1;
-                        $item = StringToItemParser::getInstance()->parse(Utils::getConfigValue("key"), $count)->setLore([$args[1]]);
+                        $item = StringToItemParser::getInstance()->parse(Utils::getConfigValue("key"))->setCount($count)->setLore([$args[1]]);
                         if ($player->getInventory()->canAddItem($item)) {
                             $player->getInventory()->addItem($item);
                         } else $player->getWorld()->dropItem($player->getPosition(), $item);
