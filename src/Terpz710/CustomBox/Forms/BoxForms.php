@@ -29,7 +29,6 @@ class BoxForms implements Form
             if (is_null($data)) return;
 
             $id = Utils::getConfigValue("key")[0];
-            $meta = Utils::getConfigValue("key")[1] ?? 0;
             if ($player->getInventory()->contains(StringToItemParser::getInstance()->parse($id)->setLore([$boxName]))) {
                 $player->getInventory()->removeItem(StringToItemParser::getInstance()->parse($id)->setLore([$boxName]));
                 $chance = 100;
