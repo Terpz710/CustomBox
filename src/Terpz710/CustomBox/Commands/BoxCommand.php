@@ -32,7 +32,7 @@ class BoxCommand extends Command
     public function execute(CommandSender $sender, string $commandLabel, array $args)
     {
         if ($sender instanceof Player) {
-            if ($sender->hasPermission($this->hasPermission())) {
+            if ($sender->hasPermission("box.use")) {
                 if (isset($args[0])) {
                     $name = Utils::getConfigValue("boxs")[$args[0]] ?? null;
                     if (strtolower($args[0]) === "remove") {
