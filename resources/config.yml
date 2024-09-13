@@ -12,7 +12,7 @@ boxs:
       geometryId: "geometry.unknown"
 
 # Key ( key: [ID, META] )
-key: [369, 0]
+key: BLAZE_ROD
 
 # Messages
 prefix: "§eBox§f "
